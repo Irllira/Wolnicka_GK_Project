@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: GrandmaWithMom
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: c6967df0e51225f4aa9f526a97d926f0, type: 2}
+  numberOfActions: 0
+  lines:
+  - text: 'Mom: You need to remmember, Red. Don''t tell strangers where you''re going
+      like that!'
+    place: 0
+    next: 1
+  - text: 'Grandma: That''s true. You could have put us in reall danger, you know'
+    place: 1
+    next: 2
+  - text: 'Red: I know, I know. I''m sorry, Mom. I''m sorry Grandma'
+    place: 2
+    next: 3
+  - text: 'Mom: It''s fine, just be more careful in the futer, okey?'
+    place: 3
+    next: 4
+  - text: 'Mom: And you! Thank you for letting me know something happened, we''re
+      all very greatful'
+    place: 4
+    next: 5
+  - text: 'Red: Yes, than you'
+    place: 5
+    next: 6
+  - text: 'Grandma: You are a good neighbour, thank you for keeping an eye on my
+      granddauther'
+    place: 6
+    next: 7
+  choices: []
+  items: []
+  flags:
+  - name: LittleRedEndingGood
+    place: 7
+    next: 0
+    nextScene: 5
+  actionTypes: []

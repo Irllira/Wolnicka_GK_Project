@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: LittleRedWolf
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 882f7bcf4c28a2f468fc06e4e4c52b49, type: 2}
+  numberOfActions: 22
+  lines:
+  - text: 'Wolf: So, you''re visiting your grandma, huh?'
+    place: 0
+    next: 1
+  - text: 'Red: Yes, and... Oh! Hello again!'
+    place: 1
+    next: 2
+  - text: 'Wolf: Oh yes, looks like we have company. Nice to meet you.'
+    place: 2
+    next: 3
+  - text: 'Wolf: I''m Mr. Wolf, I was just talking to the little girl about those
+      beautiful flowers'
+    place: 4
+    next: 5
+  - text: 'Wolf: Well, that''s not very nice to say. Besides, it''s not like you
+      can make me'
+    place: 6
+    next: 5
+  - text: 'Wolf: That''s... that''s for me? Why, thank you!'
+    place: 7
+    next: 8
+  - text: 'Red: Hey! That''s mine! Why did you give it to him!'
+    place: 8
+    next: 9
+  - text: 'Red: I''m going to tell grandma!'
+    place: 9
+    next: 10
+  - text: 'Wolf: Hey! Wait!'
+    place: 11
+    next: 12
+  - text: 'Wolf: Ugh, no use, you scared her. '
+    place: 12
+    next: 13
+  - text: 'Wolf: Well, I guess I''ll have to do with this. A bit dissapointing, but
+      oh well'
+    place: 13
+    next: 0
+  - text: 'Wolf: Agh! Fine, fine. I''m going!'
+    place: 15
+    next: 16
+  - text: 'Red: Mr. Wolf? Why did you scared him like that?'
+    place: 17
+    next: 18
+  - text: 'Red: But... but he wasn''t dangerous, was he? He seemed nice. Oh no...'
+    place: 19
+    next: 20
+  - text: 'Red: I told him where I was going! What now?'
+    place: 20
+    next: 0
+  - text: 'Red: See you around!'
+    place: 21
+    next: 0
+  choices:
+  - name: First choice
+    place: 3
+    options:
+    - text: Who are you? Why are you talking to her?
+      place: 3
+      next: 4
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: Nice to meet you
+      place: 3
+      next: 5
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: Hey! Leve her alone!
+      place: 3
+      next: 6
+      avilable: 1
+      conditionType: 
+      item: 
+  - name: Second choice
+    place: 5
+    options:
+    - text: '*Leave*'
+      place: 5
+      next: 14
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: '*Give Wolf the basket*[-Basket]'
+      place: 5
+      next: 7
+      avilable: 0
+      conditionType: ItemTrue
+      item: Food Bascet
+    - text: '*Threaten Wolf with the axe*'
+      place: 5
+      next: 15
+      avilable: 0
+      conditionType: ItemTrue
+      item: Axe
+  - name: ThirdChoice
+    place: 18
+    options:
+    - text: You shouldn't talk to strangers
+      place: 18
+      next: 19
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: He was suspisious, I don't trust him
+      place: 18
+      next: 19
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: Why do you think?
+      place: 18
+      next: 19
+      avilable: 1
+      conditionType: 
+      item: 
+  items: []
+  flags:
+  - name: RedScared
+    place: 10
+    next: 11
+    nextScene: 2
+  - name: WolfRegular
+    place: 14
+    next: 23
+    nextScene: 3
+  - name: WolfScared
+    place: 16
+    next: 22
+    nextScene: 4
+  - name: LittleRedPostWolf
+    place: 22
+    next: 17
+    nextScene: 5
+  - name: LittleRedPostWolf
+    place: 23
+    next: 21
+    nextScene: 5
+  actionTypes:
+  - Line
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Choice
+  - Line
+  - Line
+  - Line
+  - Line
+  - Other
+  - Line
+  - Line
+  - Line
+  - Other
+  - Line
+  - Other
+  - Line
+  - Choice
+  - Line
+  - Line
+  - Line

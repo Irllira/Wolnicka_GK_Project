@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: LittleRedScared
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: c6967df0e51225f4aa9f526a97d926f0, type: 2}
+  numberOfActions: 12
+  lines:
+  - text: 'Red: It''s them! They gave my basket to Mr. Wolf'
+    place: 0
+    next: 1
+  - text: 'Grandma: Is that true? Why would you do that?'
+    place: 1
+    next: 2
+  - text: 'Grandma: Oh! Well... That''s... Thank you! I''m sorry for being rude'
+    place: 3
+    next: 8
+  - text: 'Grandma: Red, you should know not to talk to strangers!'
+    place: 4
+    next: 5
+  - text: 'Red: Sorry grandma. And now I don''t have your basket...'
+    place: 5
+    next: 6
+  - text: 'Grandma: It''s okey, just don''t do it again'
+    place: 6
+    next: 0
+  - text: 'Grandma: It''s... Well, I suppose it makes sense, but...'
+    place: 7
+    next: 10
+  - text: 'Grandma: Ugh! So rude. Go away then, leve the poor child alone!'
+    place: 11
+    next: 9
+  choices:
+  - name: Choice1
+    place: 2
+    options:
+    - text: 'He was suspicious and I wanted him to leave the girl alone '
+      place: 2
+      next: 3
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: She gave it to me, so I  thought I could do what I wanted with it
+      place: 2
+      next: 7
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: I liked him more then your granddauther
+      place: 2
+      next: 11
+      avilable: 1
+      conditionType: 
+      item: 
+  items: []
+  flags:
+  - name: LittleRedEndingGood
+    place: 8
+    next: 4
+    nextScene: 5
+  - name: LittleRedEndingNegative
+    place: 9
+    next: 0
+    nextScene: 6
+  - name: LittleRedEndingNeutral
+    place: 10
+    next: 5
+    nextScene: 7
+  actionTypes:
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Other
+  - Other
+  - Other
+  - Line

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d209f1f9fcb6bfb448f30881604db8ee, type: 3}
+  m_Name: BreadCrumbs
+  m_EditorClassIdentifier: 
+  itemType: Food
+  itemName: Bread Crumb
+  image: {fileID: 21300000, guid: c46686551a078c74f9ee2638707f244d, type: 3}
+  model: {fileID: 4073313753846648868, guid: abbf3c63b19f17e49a744893ead5e89f, type: 3}
+  interactionText: Pick up

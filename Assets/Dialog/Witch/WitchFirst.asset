@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: WitchFirst
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: e370d7008978d5f468bea53e0528f769, type: 2}
+  numberOfActions: 19
+  lines:
+  - text: Who are you? What are you doing in my garden?
+    place: 0
+    next: 1
+  - text: Ha! Ha! Of course I did! They're my little workers now!
+    place: 2
+    next: 4
+  - text: Well, admire without bothering me, or I'll hex you!
+    place: 3
+    next: 0
+  - text: Ha! And why would I do that, huh?
+    place: 5
+    next: 6
+  - text: Ha! That's what I thought!
+    place: 7
+    next: 8
+  - text: Oh, you've got nerve, trying to trade me my own Gingerbread!
+    place: 9
+    next: 6
+  - text: Hmm... Okey, fine. Get those brats, they're not much help anyway!
+    place: 10
+    next: 11
+  - text: Is that so? Great! I realy get willing slaves, ha ha!
+    place: 12
+    next: 13
+  - text: Come out, kids. You just go promoted to managers!
+    place: 13
+    next: 14
+  - text: Ha! Think again if you don't want to end up as a candytree!
+    place: 15
+    next: 6
+  - text: Oh! Thank you so much!
+    place: 19
+    next: 20
+  - text: Sure, I have, thier my little slaves, ha!
+    place: 21
+    next: 22
+  - text: But, I'll let them go for you friend!
+    place: 22
+    next: 11
+  choices:
+  - name: Choice1
+    place: 1
+    options:
+    - text: Have you seen two little girls around?
+      place: 1
+      next: 2
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: I'm just admiaring your house
+      place: 2
+      next: 3
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: 'I wanted to give you a flower [- Flower]'
+      place: 2
+      next: 16
+      avilable: 0
+      conditionType: ItemTrue
+      item: Flower
+  - name: Choice2
+    place: 4
+    options:
+    - text: Let them go!
+      place: 4
+      next: 5
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: I want to work for you too!
+      place: 4
+      next: 12
+      avilable: 1
+      conditionType: 
+      item: 
+  - name: Choice3
+    place: 6
+    options:
+    - text: '*Leave*'
+      place: 6
+      next: 7
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: 'How about a cookie? [-Gingerbread]'
+      place: 6
+      next: 9
+      avilable: 1
+      conditionType: ItemTrue
+      item: Gingerbread
+    - text: 'I have a flowercrown [-FlowerCrown]'
+      place: 6
+      next: 17
+      avilable: 0
+      conditionType: ItemTrue
+      item: FlowerCrown
+    - text: '*Threaten with an axe*'
+      place: 6
+      next: 15
+      avilable: 0
+      conditionType: ItemTrue
+      item: Axe
+    - text: 'How about some food? [-Basket]'
+      place: 6
+      next: 18
+      avilable: 0
+      conditionType: ItemTrue
+      item: Food Bascet
+  - name: Choice4
+    place: 20
+    options:
+    - text: Have you seen two little bears around?
+      place: 20
+      next: 21
+      avilable: 1
+      conditionType: 
+      item: 
+  items:
+  - name: Flower
+    place: 16
+    next: 19
+    add_delete: 0
+    item: {fileID: 4344009873905072376, guid: 4ffd656af9fa6104f88d671f22685442, type: 3}
+  - name: FlowerCrown
+    place: 17
+    next: 10
+    add_delete: 0
+    item: {fileID: 7845605022492361843, guid: 4efc9c3666659dc4d988f6bcfcd8fa8e, type: 3}
+  - name: Basket
+    place: 18
+    next: 10
+    add_delete: 0
+    item: {fileID: 2727546279497957359, guid: 62b6ec7d666391e49a41e7ad9ccd0c45, type: 3}
+  flags:
+  - name: WitchBargain
+    place: 8
+    next: 0
+    nextScene: 1
+  - name: KidsSaved
+    place: 11
+    next: 0
+    nextScene: 4
+  - name: KidsOut
+    place: 14
+    next: 0
+    nextScene: 3
+  actionTypes:
+  - Line
+  - Choice
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Choice
+  - Line
+  - Other
+  - Line
+  - Line
+  - Other
+  - Line
+  - Line
+  - Other
+  - Line
+  - Item
+  - Item
+  - Item

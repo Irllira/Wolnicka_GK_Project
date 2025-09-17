@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: WoodmanIntroduction
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 0bb4bd3f0c7b87d418f5804efbdd5615, type: 2}
+  numberOfActions: 11
+  lines:
+  - text: Hello there!
+    place: 0
+    next: 1
+  - text: Yep
+    place: 2
+    next: 3
+  - text: If there's any trouble come talk to me!
+    place: 3
+    next: 8
+  - text: Yep
+    place: 4
+    next: 5
+  - text: They went on a walk to the forest this morning
+    place: 5
+    next: 6
+  - text: I hope they won't get hungry
+    place: 6
+    next: 7
+  - text: They took some bread, but I know they prefer cookies
+    place: 7
+    next: 8
+  - text: See you around
+    place: 8
+    next: 0
+  - text: Sure, why not, I have a spare at home
+    place: 9
+    next: 10
+  choices:
+  - name: Choice1
+    place: 1
+    options:
+    - text: Are you the woodsman?
+      place: 1
+      next: 2
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: Are you Hansel and Grethel's dad?
+      place: 1
+      next: 4
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: Can I borrow your axe?
+      place: 1
+      next: 9
+      avilable: 1
+      conditionType: ItemFalse
+      item: Axe
+  items:
+  - name: Axe
+    place: 10
+    next: 8
+    add_delete: 1
+    item: {fileID: 4284127738106319759, guid: 9a42719154c1ba3468dfccb8f2b27bd6, type: 3}
+  actionTypes:
+  - Line
+  - Choice
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Item

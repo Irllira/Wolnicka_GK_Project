@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: LittleRedFirstScene
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 882f7bcf4c28a2f468fc06e4e4c52b49, type: 2}
+  numberOfActions: 20
+  lines:
+  - text: Hi!
+    place: 0
+    next: 1
+  - text: I'm going to visit my grandma, but I wanted to pick up some pretty flowers
+    place: 1
+    next: 2
+  - text: I agree!
+    place: 3
+    next: 4
+  - text: Here, I made a flower crown, do you want one?
+    place: 4
+    next: 5
+  - text: Here you go!
+    place: 7
+    next: 19
+  - text: Oh. Okey
+    place: 8
+    next: 9
+  - text: Now that I think about it
+    place: 9
+    next: 11
+  - text: Well, now that you say that
+    place: 10
+    next: 11
+  - text: It's gonna be hard to carry both flowers and the basket
+    place: 11
+    next: 12
+  - text: Really? Thank you!
+    place: 13
+    next: 14
+  - text: I guess you're right
+    place: 17
+    next: 18
+  choices:
+  - name: First
+    place: 2
+    options:
+    - text: The flowers are very nice
+      place: 2
+      next: 3
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: Are you sure it's a good idea?
+      place: 2
+      next: 10
+      avilable: 1
+      conditionType: 
+      item: 
+  - name: FlowerCrown
+    place: 5
+    options:
+    - text: Yes!
+      place: 5
+      next: 6
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: No
+      place: 5
+      next: 8
+      avilable: 1
+      conditionType: 
+      item: 
+  - name: HelpOrGo
+    place: 12
+    options:
+    - text: I can help with that
+      place: 12
+      next: 13
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: You should go straight to your grandma's house
+      place: 12
+      next: 17
+      avilable: 1
+      conditionType: 
+      item: 
+  - name: BasketOrFlowers
+    place: 14
+    options:
+    - text: I'll carry the basket
+      place: 12
+      next: 15
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: I'll take the flowers
+      place: 12
+      next: 16
+      avilable: 1
+      conditionType: 
+      item: 
+  items:
+  - name: FlowerCrown
+    place: 6
+    next: 7
+    add_delete: 1
+    item: {fileID: 7845605022492361843, guid: 4efc9c3666659dc4d988f6bcfcd8fa8e, type: 3}
+  - name: Basket
+    place: 15
+    next: 7
+    add_delete: 1
+    item: {fileID: 2727546279497957359, guid: 62b6ec7d666391e49a41e7ad9ccd0c45, type: 3}
+  - name: Flower
+    place: 16
+    next: 7
+    add_delete: 1
+    item: {fileID: 4344009873905072376, guid: 4ffd656af9fa6104f88d671f22685442, type: 3}
+  flags:
+  - name: RedGonnaGo
+    place: 18
+    next: 0
+    nextScene: 1
+  - name: RedCollectingFlowers
+    place: 19
+    next: 0
+    nextScene: 2
+  actionTypes:
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Line
+  - Choice
+  - Item
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Choice
+  - Item
+  - Item
+  - Line
+  - Other
+  - Other

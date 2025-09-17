@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: LittleRedMomWolf
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 882f7bcf4c28a2f468fc06e4e4c52b49, type: 2}
+  numberOfActions: 7
+  lines:
+  - text: 'Mom: Why are you talking to my daughter?!'
+    place: 0
+    next: 1
+  - text: 'Wolf: Hey, hey. I''m not doing anything! I just wanted to check if she
+      didn''t get lost, that''s all'
+    place: 1
+    next: 2
+  - text: 'Mom: Yeah. Right. Like I''d belive that.'
+    place: 2
+    next: 3
+  - text: 'Mom: Come on Red. We''re going.'
+    place: 3
+    next: 4
+  - text: 'Red: Goodbye, Mr Wolf.'
+    place: 4
+    next: 6
+  - text: 'Wolf: Ugh. So close.'
+    place: 5
+    next: 0
+  choices: []
+  items: []
+  flags:
+  - name: MomSavedTheDay
+    place: 6
+    next: 5
+    nextScene: 0
+  actionTypes:
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Other

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: RedMomBasket
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 6aedc875aabea8844a671b01fb6a5537, type: 2}
+  numberOfActions: 9
+  lines:
+  - text: Is this my daughter basket?
+    place: 0
+    next: 1
+  - text: Where did you get this?
+    place: 1
+    next: 2
+  - text: Where did you get this?
+    place: 1
+    next: 2
+  - text: She was supposed to go straight to her grandma's
+    place: 3
+    next: 4
+  - text: Ugh, unresponsible child!
+    place: 4
+    next: 5
+  - text: I'm going to go find her!
+    place: 5
+    next: 8
+  - text: What?! Why?
+    place: 6
+    next: 7
+  - text: Ugh, nevermind that!
+    place: 7
+    next: 5
+  choices:
+  - name: 
+    place: 2
+    options:
+    - text: She gave me that
+      place: 2
+      next: 3
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: She's collecting flowers in the clearing
+      place: 2
+      next: 3
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: I'm not telling you
+      place: 2
+      next: 6
+      avilable: 1
+      conditionType: 
+      item: 
+  items: []
+  flags:
+  - name: MomGone
+    place: 8
+    next: 0
+    nextScene: 2
+  actionTypes:
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line

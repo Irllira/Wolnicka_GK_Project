@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: PigSticks
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 9aa6770ed2a0ddb40b20dc970b6918f9, type: 2}
+  numberOfActions: 7
+  lines:
+  - text: Hello! I want to build a stick house
+    place: 0
+    next: 1
+  - text: But I don't have enough sticks. Could you help me?
+    place: 1
+    next: 2
+  - text: See you around
+    place: 3
+    next: 0
+  - text: Thank you so much!
+    place: 5
+    next: 6
+  choices:
+  - name: 1
+    place: 2
+    options:
+    - text: '*Leave*'
+      place: 2
+      next: 3
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: Sure!
+      place: 2
+      next: 4
+      avilable: 1
+      conditionType: ItemTrue
+      item: Stick
+  items:
+  - name: Stick
+    place: 4
+    next: 5
+    add_delete: 0
+    item: {fileID: 7429949849194982957, guid: a6d608c746a874c4b8d72e6f65ba2a68, type: 3}
+  flags:
+  - name: BuiltSticks
+    place: 6
+    next: 0
+    nextScene: 1
+  actionTypes:
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Item
+  - Line
+  - Other

@@ -1,0 +1,156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: WolfScared
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: c6967df0e51225f4aa9f526a97d926f0, type: 2}
+  numberOfActions: 28
+  lines:
+  - text: 'Red: Grandma, why are your eyes so big?'
+    place: 0
+    next: 1
+  - text: 'Grandma: Why, to better see you of course, my dear'
+    place: 1
+    next: 2
+  - text: 'Red: But why are your ears so big?'
+    place: 2
+    next: 3
+  - text: 'Grandma: Well, to better hear you of course'
+    place: 3
+    next: 4
+  - text: 'Red: Grandma? Why are your teeth so big?'
+    place: 5
+    next: 6
+  - text: 'Grandma: Oh? My teeth?'
+    place: 6
+    next: 7
+  - text: 'Grandma: To better eat you of course!'
+    place: 7
+    next: 8
+  - text: 'Red: What?! Agh!!!'
+    place: 8
+    next: 9
+  - text: '*The "Grandma" lunges*'
+    place: 9
+    next: 10
+  - text: '*And swallows the girl whole!*'
+    place: 10
+    next: 11
+  - text: 'Wolf: Yummy!'
+    place: 12
+    next: 13
+  - text: You! Well you're too late!
+    place: 13
+    next: 14
+  - text: Sure did! And I will eat you too, if you stick around!
+    place: 15
+    next: 0
+  - text: 'Wolf: Agh!'
+    place: 16
+    next: 17
+  - text: '*The Wolf vomited and run away!*'
+    place: 18
+    next: 19
+  - text: 'Red: Agh! That was so scary!'
+    place: 19
+    next: 20
+  - text: 'Red: Thank you so much!'
+    place: 20
+    next: 0
+  - text: 'Grandma: You again!'
+    place: 21
+    next: 22
+  - text: 'Grandma: Agh! Fine! I''ll leve the girl alone!'
+    place: 22
+    next: 23
+  - text: 'Grandma: The grandma is tied up insie!'
+    place: 23
+    next: 24
+  - text: 'Red: What... What happened? Was that Mr Wolf?'
+    place: 25
+    next: 26
+  - text: 'Red: That was so scary! Thank you!'
+    place: 26
+    next: 0
+  choices:
+  - name: Choice one
+    place: 4
+    options:
+    - text: '*Do nothing*'
+      place: 4
+      next: 5
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: Hey! What's going on here?
+      place: 4
+      next: 22
+      avilable: 1
+      conditionType: 
+      item: 
+  - name: Choice two
+    place: 14
+    options:
+    - text: You ate her!
+      place: 14
+      next: 15
+      avilable: 1
+      conditionType: 
+      item: 
+    - text: '*Attack*'
+      place: 14
+      next: 16
+      avilable: 1
+      conditionType: ItemTrue
+      item: Axe
+  items: []
+  flags:
+  - name: WolfEats
+    place: 11
+    next: 12
+    nextScene: 8
+  - name: WolfVomits
+    place: 17
+    next: 18
+    nextScene: 9
+  - name: WolfVomits
+    place: 24
+    next: 25
+    nextScene: 9
+  actionTypes:
+  - Line
+  - Line
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Other
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Line
+  - Other
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Line
+  - Choice
+  - Line
+  - Line

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb259858af74eb24e826350a8e271054, type: 3}
+  m_Name: Bird
+  m_EditorClassIdentifier: 
+  characterName: Bird
+  model: {fileID: 0}
+  hello: 
+  characterPosition: {x: 173.439, y: 55.13015, z: 227.5694}
+  cameraPositionMove: {x: -3.5, y: 0, z: -0.57}
+  cameraRotation: {x: 1.8, y: 115.5, z: 0}

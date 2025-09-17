@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f7401a621d71943aa67500c190fffc, type: 3}
+  m_Name: WitchBargain
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: e370d7008978d5f468bea53e0528f769, type: 2}
+  numberOfActions: 0
+  lines:
+  - text: So, you've got an better offer for me?
+    place: 0
+    next: 1
+  - text: Ha! That's what I thought!
+    place: 2
+    next: 0
+  - text: Oh, you've got nerve, trying to trade me my own Gingerbread!
+    place: 3
+    next: 1
+  - text: Hmm... Okey, fine. Get those brats, they're not much help anyway!
+    place: 4
+    next: 6
+  - text: Ha! Think again if you don't want to end up as a candytree!
+    place: 5
+    next: 1
+  choices:
+  - name: Choice One
+    place: 1
+    options:
+    - text: '*Leave*'
+      place: 1
+      next: 2
+      avilable: 0
+      conditionType: 
+      item: 
+    - text: 'How about a cookie? [-Gingerbread]'
+      place: 1
+      next: 3
+      avilable: 0
+      conditionType: ItemTrue
+      item: 
+    - text: 'I have a flowercrown [-FlowerCrown]'
+      place: 1
+      next: 7
+      avilable: 0
+      conditionType: ItemTrue
+      item: 
+    - text: 'How about some food? [-Basket]'
+      place: 1
+      next: 8
+      avilable: 0
+      conditionType: ItemTrue
+      item: Food Bascet
+    - text: '*Threaten with an axe*'
+      place: 1
+      next: 5
+      avilable: 0
+      conditionType: ItemTrue
+      item: Axe
+  items:
+  - name: FlowerCrown
+    place: 7
+    next: 4
+    add_delete: 0
+    item: {fileID: 7845605022492361843, guid: 4efc9c3666659dc4d988f6bcfcd8fa8e, type: 3}
+  - name: FoodBascet
+    place: 8
+    next: 4
+    add_delete: 0
+    item: {fileID: 2727546279497957359, guid: 62b6ec7d666391e49a41e7ad9ccd0c45, type: 3}
+  flags:
+  - name: KidsSaved
+    place: 6
+    next: 0
+    nextScene: 4
+  actionTypes: []
