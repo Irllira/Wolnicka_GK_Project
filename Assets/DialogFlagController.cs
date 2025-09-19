@@ -1,6 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+/*
+ <summary>
+    This class is responsible for controling the dialog flags and updating what scene is to be played next based on them
+ </summary>
+ */
 public class DialogFlagController : MonoBehaviour
 {
     [SerializeField] public List<Flag> flags;
@@ -91,7 +98,7 @@ public class DialogFlagController : MonoBehaviour
                 
         }
     }
-    public void ChangeFlag(OtherDialogOption f)
+    public void ChangeFlag(FlagOption f)
     {
         foreach (Flag flag in flags)
         {

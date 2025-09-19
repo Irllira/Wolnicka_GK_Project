@@ -1,6 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+
+/*
+ * <summary>
+ * This class is placed in a game object to signify it is a character
+ * </summary>
+ */
 public class Character : MonoBehaviour, InteractionInterface
 {
     [SerializeField] private ScriptableCharacter scriptableObject;
@@ -19,15 +25,9 @@ public class Character : MonoBehaviour, InteractionInterface
         return scriptableObject.hello;
     }
 
-
-
     public void Interact()
     {
         return;
-        foreach (Scene scene in scenes)
-        {
-           scene.playScene();
-        }
     }
 
     public Scene GetScene()
@@ -65,6 +65,12 @@ public class Character : MonoBehaviour, InteractionInterface
     }
 }
 
+
+/*
+ * <summary>
+ * This class is defining a scene, it is serializable and used in Character class 
+ * </summary>
+ */
 
 [System.Serializable]
 public class Scene
@@ -108,7 +114,7 @@ public class Scene
                     break;
                 }
             }
-            foreach (OtherDialogOption item in sceneScript.flags)
+            foreach (FlagOption item in sceneScript.flags)
             {
                 if (item.place == i)
                 {
@@ -166,9 +172,9 @@ public class Scene
         return null;
     }
 
-    public OtherDialogOption GetOther(int i)
+    public FlagOption GetOther(int i)
     {
-        foreach (OtherDialogOption other in sceneScript.flags)
+        foreach (FlagOption other in sceneScript.flags)
         {
             if (i == other.GetPlace())
                 return other;
@@ -191,7 +197,7 @@ public class Scene
         {
             i++;
         }
-        foreach (OtherDialogOption other in sceneScript.flags)
+        foreach (FlagOption other in sceneScript.flags)
         {
             i++;
         }

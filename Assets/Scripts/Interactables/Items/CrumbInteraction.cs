@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/*
+ * <summary>
+ * This class is responsible for controlling how Crumb interaction works
+ * </summary>
+ * */
 public class CrumbInteraction : MonoBehaviour, InteractionInterface
 {
     [SerializeField] private string interactText;

@@ -1,5 +1,11 @@
 using UnityEngine;
 
+
+/*
+ * <summary>
+ * This class defining a new scriptable object called scriptable item
+ * </summary>
+ */
 [CreateAssetMenu(fileName = "ScriptableItem", menuName = "Scriptable Objects/ScriptableItem")]
 public class ScriptableItem : ScriptableObject
 {

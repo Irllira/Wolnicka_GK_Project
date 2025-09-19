@@ -4,6 +4,12 @@ using UnityEngine.UI;
 using TMPro;
 
 
+/*
+ <summary>
+    This class is responsible for controling the users interface during dialog scenes
+ </summary>
+ */
+
 public class DialogUI : GeneralUI
 {
     private ItemsManager playerInventory;
@@ -24,8 +30,6 @@ public class DialogUI : GeneralUI
 
     private void Awake()
     {
-        //Transform buff = transform.Find("DialogWindowContainer");
-
         characterContainer = containerObject.transform.Find("CharacterDialogContainer");
         PlayerDialogUI = containerObject.transform.Find("PlayerDialogUI");
         dialogOptionContainer = PlayerDialogUI.Find("DialogOptionsContainer");
@@ -35,6 +39,7 @@ public class DialogUI : GeneralUI
         helpGeneral = containerObject.transform.Find("HelpContainer");
     }
 
+    //This method sets up players dialog options, including seting up a frame around a curently chosen option
     public void DialogOptions(Choice choice,int choiceOption)
     {
         ClearChoice();
@@ -43,9 +48,6 @@ public class DialogUI : GeneralUI
         int z = 0;
         float optionSize = 55f;
 
-        Image background;
-      //  background = PlayerDialogUI.Find("Bacground").GetComponent<Image>();
-        //   background.SetNativeSize();
         Image frame;
 
         TextMeshProUGUI text;
@@ -58,11 +60,6 @@ public class DialogUI : GeneralUI
                 dialogOptionSlot.gameObject.SetActive(true);
 
                 dialogOptionSlot.anchoredPosition = new Vector2(x * optionSize, -y * optionSize);              //position
-
-                //icon = dialogOptionSlot.Find("Background").Find("Icon").GetComponent<Image>();             //icon
-                //    icon.sprite = itemSlot.GetSprite();
-
-
 
                 text = dialogOptionSlot.Find("ChoiceText").GetComponent<TextMeshProUGUI>();   //text
                 text.text = option.text;
@@ -82,14 +79,10 @@ public class DialogUI : GeneralUI
         }
 
     }
-    public void ChoiceFrameSet(int choiceOption)
-    {
-        //set a frame around the right choice
-    }
+ 
+    //This method shows NPC's dialog
     public void NpcSpeaking(string line)
-    {
-
-        
+    {   
         npcDialogLine = characterContainer.Find("Text").GetComponent<TextMeshProUGUI>();
         npcDialogLine.text = line;
 
@@ -98,7 +91,7 @@ public class DialogUI : GeneralUI
 
     }
 
-
+    //This method deletes choices, it is called after the choice was made
     public void ClearChoice()
     {
         foreach (Transform child in dialogOptionContainer)
@@ -108,57 +101,42 @@ public class DialogUI : GeneralUI
         }
     }
 
-    private void Show(InteractionInterface interactable)
-    {
-        containerObject.SetActive(true);
-
-        //   if (interactable.GetText() != null)
-        //     textMeshInteraction.text = interactable.GetText();
-    }
-
+    //This method shows dialog UI
     public void StartScene()
     {
         Show();
-    }    
+    }
+
+    //This method hides dialog UI
     public void HideScene()
     {
         characterDialogContainer.SetActive(false);
         containerObject.SetActive(false);
     }
 
+
+    //This method hides information on how to operate dialog
     public void ShowHelpGeneral()
     {
         helpGeneral.gameObject.SetActive(true);
     }
+
+    //This method hidesinformation on how to operate dialog
     public void HideHelpGeneral()
     {
-
         helpGeneral.gameObject.SetActive(false);
     }
+
+    //This method shows information on how to operate dialog choices
     public void ShowHelpChoice()
     {
         helpChoice.gameObject.SetActive(true);
     }
 
+   //This method hides information on how to operate dialog choices
     public void HideHelpChoice()
     {
         helpChoice.gameObject.SetActive(false);
     }
 
-    private void SetChoiceBacground(Choice choice)
-    {
-        switch (choice.ChoicesSize())
-        {
-            case 1:
-
-                break;
-            case 2:
-                break;
-
-            default:
-                break;
-
-        }
-
-    }
 }

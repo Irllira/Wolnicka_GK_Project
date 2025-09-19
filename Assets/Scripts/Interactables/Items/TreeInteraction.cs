@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/*
+ * <summary>
+ * This class is responsible for controlling how Tree interaction works
+ * </summary>
+ * */
 public class TreeInteraction : MonoBehaviour, InteractionInterface
 {
     [SerializeField] private string interactText;

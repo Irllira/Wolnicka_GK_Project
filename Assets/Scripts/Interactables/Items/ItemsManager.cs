@@ -1,6 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+
+/*
+ * <summary>
+ * This class is responsible for controlling players inventory
+ * </summary>
+ * */
 public class ItemsManager : MonoBehaviour
 {
     private List<Item> itemList;

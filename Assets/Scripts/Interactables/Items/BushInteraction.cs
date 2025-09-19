@@ -1,5 +1,11 @@
 using UnityEngine;
 
+
+/*
+ * <summary>
+ * This class is responsible for controlling how Bush interaction works
+ * </summary>
+ * */
 public class BushInteraction : MonoBehaviour, InteractionInterface
 {
     [SerializeField] private string interactText;

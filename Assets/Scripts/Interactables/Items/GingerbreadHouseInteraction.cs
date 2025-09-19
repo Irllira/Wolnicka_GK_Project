@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/*
+ * <summary>
+ * This class is responsible for controlling how Gingerbread house interaction works
+ * </summary>
+ * */
 public class GingerbreadHouseInteraction : MonoBehaviour, InteractionInterface
 {
     [SerializeField] private string interactText;

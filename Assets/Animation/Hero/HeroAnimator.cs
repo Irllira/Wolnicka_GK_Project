@@ -1,5 +1,11 @@
 using UnityEngine;
 
+
+/*
+ * <summary>
+ * This class is responsible for controlling when a walking animation should start/stop playing
+ * </summary>
+ * */
 public class AnimationStateControler : MonoBehaviour
 {
     Animator animator;

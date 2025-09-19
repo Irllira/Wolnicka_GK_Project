@@ -1,6 +1,12 @@
 using UnityEngine;
 using TMPro;
 
+
+/*
+ <summary>
+    This class is responsible for controling the interaction interface
+ </summary>
+ */
 public class InteractionsUI : GeneralUI
 {
    // [SerializeField] private GameObject containerObject;

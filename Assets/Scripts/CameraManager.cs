@@ -2,6 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+/*
+ <summary>
+    This class is responsible for controling the camera, both during the game and dialog
+ </summary>
+ */
 public class CameraManager: MonoBehaviour
 {
     #region Variables

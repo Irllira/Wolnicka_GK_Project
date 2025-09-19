@@ -1,5 +1,11 @@
 using UnityEngine;
 
+
+/*
+ * <summary>
+ * This class is controlling a playing scene
+ * </summary>
+ */
 public class ScenePlayer : MonoBehaviour
 {
     [SerializeReference] private DialogUI dialogUI;
@@ -17,24 +23,9 @@ public class ScenePlayer : MonoBehaviour
     {
         if (scenePlaying == null)
             return;
-
-        //  if (Input.GetKeyDown(KeyCode.Space))
-        //   {
-
-        //  }
     }
 
-
-    private Line findAction(Scene scene, int num)
-    {
-        foreach (Line line in scene.sceneScript.lines)
-        {
-            if (line.place == num)
-                return line;
-        }
-        return null;
-    }
-
+    // This method is responsible for setting up a scene when it first starts playing
     public void SetScene(Scene scene, ItemsManager inventory, Character chara, DialogFlagController dfc)
     {
         character = chara;
@@ -50,6 +41,7 @@ public class ScenePlayer : MonoBehaviour
 
     }
 
+    //This method is responsible for playing out a current action and returns information on whether or not there is a next action
     public bool PlayNext(DialogFlagController dfc)
     {
         string s = "";
@@ -63,8 +55,6 @@ public class ScenePlayer : MonoBehaviour
         {
             dialogUI.HideHelpGeneral();
         }
-
-
 
 
         switch (scenePlaying.CheckActionType(curentAction))
@@ -115,7 +105,7 @@ public class ScenePlayer : MonoBehaviour
 
             case "Other":
 
-                OtherDialogOption flag = GetFlag();
+                FlagOption flag = GetFlag();
                 dfc.ChangeFlag(flag.name);
 
                 curentAction = scenePlaying.GetOther(curentAction).next;
@@ -174,7 +164,7 @@ public class ScenePlayer : MonoBehaviour
     }
 
     
-
+    // This method is responsible for giving information on what item should be given based on the currentAction
     public GiveItems GetItem()
     {
         //Item it;
@@ -198,9 +188,11 @@ public class ScenePlayer : MonoBehaviour
         return null;
     }
 
-    public OtherDialogOption GetFlag()
+
+    // This method is responsible for giving information on what flag should be given based on the currentAction
+    public FlagOption GetFlag()
     {
-        foreach (OtherDialogOption flag in scenePlaying.sceneScript.flags)
+        foreach (FlagOption flag in scenePlaying.sceneScript.flags)
         {
             if (flag.place == curentAction)
             {
@@ -215,6 +207,8 @@ public class ScenePlayer : MonoBehaviour
         }
         return null;
     }
+
+    // This method is responsible for playing an NPC's dialog
     private void PlayNpcsLine()
     {
         string s = "";
@@ -229,6 +223,8 @@ public class ScenePlayer : MonoBehaviour
         }
     }
 
+
+    // This method is responsible for "cleaning up" the scene when it's over
     public void HideScene()
     {
         character.NormalNextScene();   
@@ -238,6 +234,7 @@ public class ScenePlayer : MonoBehaviour
         curentAction = 0;
     }
 
+    // This method is responsible for "cleaning up" dialog options after the choice is made
     private void EndChoice()
     {
         curentChoice = null;
@@ -245,10 +242,14 @@ public class ScenePlayer : MonoBehaviour
         choiceOption = -1;
         dialogUI.ClearChoice();
     }
+
+    // This method is returns information on wheter or no the choice is being made
     public bool IsChoiceActive()
     {
         return choiceBeingMade;
     }
+
+    //This methos is responsible for controlling what dialog option is curently chosen
     public void SetChoice(bool up)
     {
         if (up)
@@ -289,18 +290,20 @@ public class ScenePlayer : MonoBehaviour
         dialogUI.DialogOptions(curentChoice, choiceOption);
     }
 
+
+    // This method returns information on what is the type of the curent action
     public string GetCurrentType()
     {
         return scenePlaying.CheckActionType(curentAction);
     }
 
+    // This method returns information on what character the scene is attached to
     public ScriptableCharacter GetCharacter()
     {
         return scenePlaying.sceneScript.character;
     }
 
-
-
+    // This method is responsible for checing if the dialog option is avaliable
     private void CheckChoices()
     {
         curentChoice.ResetChoices();
@@ -328,36 +331,6 @@ public class ScenePlayer : MonoBehaviour
             i++;
         }
     }
-
-
-
-
-    /*public void PlayAScene()
-    {
-
-        string s = null;
-        dialogUI.DialogOptions();
-        for (int i = 0; i < scenePlaying.GetSize(); i++)
-        {
-           
-            if (findAction(scenePlaying, i) != null)
-            {
-                s = findAction(scenePlaying, i).text;
-                Debug.Log(s);
-                //  WaitTime.Create(() => dialogUI.NpcSpeaking(s), 3);
-                //  WaitTime.Create(() => ReadyNext(), 3);
-            }
-            else
-            {
-                Debug.Log("Choice Time");
-
-
-            }
-            // WaitTime.Create(() => ReadyNext(), 3);
-        }
-    }
-    */
-
 }
 
 

@@ -1,14 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * <summary>
+ *   This class is responsible for controlling the disapearance of characters during the dialog based on dialog flags
+ * </summary>
+ */
 public class DisappearController : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private List<DisappearCharacter> chara;
     private DialogFlagController dfc;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Awake()
+        private void Awake()
     {
         dfc = player.GetComponent<DialogFlagController>();
     }

@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/*
+ * <summary>
+ * This class is responsible for controlling how Gingerbread interaction works
+ * </summary>
+ * */
 public class GingerbreadInteraction : MonoBehaviour, InteractionInterface
 {
     public bool CanInteract(ItemsManager inventory)

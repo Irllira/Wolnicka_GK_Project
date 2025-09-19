@@ -1,6 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
+
+/*
+ <summary>
+    This class is responsible for controling the player's inventory interface
+ </summary>
+ */
 public class ItemsMenuUI : GeneralUI
 {
     private ItemsManager playerInventory;

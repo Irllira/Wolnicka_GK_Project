@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 
+
+/*
+ <summary>
+    This class is responsible for managing the rest of the program, it decides wheter or not the dialog is playing, there in a possible interaction and the players movment
+ </summary>
+ */
+
 [RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {

@@ -1,6 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+
+
+/*
+ * < summary >
+ *  This class defining a new scriptable object called scriptable scene, it includes information on a scene
+ * </summary>
+ */
 [CreateAssetMenu(fileName = "ScriptableScene", menuName = "Scriptable Objects/ScriptableScene")]
 public class ScriptableScene : ScriptableObject
 {
@@ -9,45 +16,41 @@ public class ScriptableScene : ScriptableObject
     [SerializeField] public List<Line> lines;
     [SerializeField] public List<Choice> choices;
     [SerializeField] public List<GiveItems> items;
-    [SerializeField] public List<OtherDialogOption> flags;
- //[SerializeField] public List<DialogInterface> wholeList; 
+    [SerializeField] public List<FlagOption> flags;
+ 
     public List<string> actionTypes;
-
-
-
-
- //   [ContextMenu("AddLine")]
-   // public void AddLine()
-   // {
-      //  lines.Add(new Line(" "));
-   // }
-
   
 }
 
+
+/*
+ * < summary >
+ * This class defines a serializable line that's a part of ScriptableScene. It includes line's text, it's place and the place of the next action
+ * </summary>
+ */
 [System.Serializable]
 public class Line: DialogInterface
 {
     [SerializeField] public string text;
     [SerializeField] public int place;
     [SerializeField] public int next;
-  
-    // InteractionInterface next;  //???
+ 
     public string GetText()
     {
         return text;
     }
 
-    //public Line(string s)
-    //{
-      //  text = s;
-    //}
     public int GetPlace()
     {
         return place;
     }
 }
 
+/*
+ * < summary >
+ *  This class defines a serializable choice that's a part of ScriptableScene
+ * </summary>
+ */
 [System.Serializable]
 public class Choice : DialogInterface
 {
@@ -82,8 +85,20 @@ public class Choice : DialogInterface
     }
 }
 
+[System.Serializable]
+public class ChoiceOption : Line
+{
+    [SerializeField] public bool avilable = true;
+    [SerializeField] public string conditionType;
+    [SerializeField] public string item;
+}
 
 
+/*
+ * < summary >
+ *  This class is serializable and a part of ScriptableScene. It includes information on what item should be added/deleted from inventory
+ * </summary>
+ */
 [System.Serializable]
 public class GiveItems : DialogInterface
 {
@@ -104,16 +119,15 @@ public class GiveItems : DialogInterface
         return name;
     }
 }
-[System.Serializable]
-public class ChoiceOption : Line
-{
-    [SerializeField] public bool avilable = true;
-    [SerializeField] public string conditionType;
-    [SerializeField] public string item;
-}
 
+
+/*
+ * < summary >
+ *  This class is serializable and a part of ScriptableScene. It includes information on what dialog flag should be raised
+ * </summary>
+ */
 [System.Serializable]
-public class OtherDialogOption: DialogInterface
+public class FlagOption: DialogInterface
 {
     [SerializeField] public string name;
     [SerializeField] public int place;
